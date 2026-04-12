@@ -1,0 +1,144 @@
+* {
+  font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.saqr-brand,
+.saqr-footer-brand {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* ── CSS Variables — Light Mode ───────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  --bg-primary:       #F8F5F0;
+  --bg-secondary:     #EEEAE3;
+  --bg-card:          #FFFFFF;
+  --bg-navbar:        #FFFFFF;
+  --bg-footer:        #1A1714;
+
+  --text-primary:     #1A1A1A;
+  --text-secondary:   #555555;
+  --text-muted:       #888888;
+  --text-footer:      #C8B99A;
+  --text-footer-head: #F0EDE8;
+
+  --accent-gold:      #C8972B;
+  --accent-gold-hover:#A87820;
+  --accent-gold-light:#F5E6C4;
+
+  --border-color:     #E0DAD0;
+  --shadow-sm:        0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:        0 4px 20px rgba(0,0,0,0.12);
+  --shadow-lg:        0 8px 40px rgba(0,0,0,0.16);
+
+  --navbar-border:    rgba(200, 151, 43, 0.2);
+  --dropdown-bg:      #FFFFFF;
+  --dropdown-hover:   #F8F5F0;
+
+  --btn-outline-text:   #1A1A1A;
+  --btn-outline-border: #C8972B;
+  --btn-outline-hover:  #C8972B;
+
+  --progress-bg:      #E0DAD0;
+
+  --badge-tourist-bg:     #E8F4F0;
+  --badge-tourist-text:   #1A6B50;
+  --badge-investor-bg:    #FFF3CD;
+  --badge-investor-text:  #856404;
+}
+
+/* ── CSS Variables — Dark Mode ────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary:       #0F0F0F;
+  --bg-secondary:     #1A1A1A;
+  --bg-card:          #1E1E1E;
+  --bg-navbar:        #111111;
+  --bg-footer:        #080808;
+
+  --text-primary:     #F0EDE8;
+  --text-secondary:   #B0A89E;
+  --text-muted:       #777777;
+  --text-footer:      #8A7D6E;
+  --text-footer-head: #D4C9BC;
+
+  --accent-gold:      #C8972B;
+  --accent-gold-hover:#E0AA40;
+  --accent-gold-light:#2A2010;
+
+  --border-color:     #2A2A2A;
+  --shadow-sm:        0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:        0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg:        0 8px 40px rgba(0,0,0,0.5);
+
+  --navbar-border:    rgba(200, 151, 43, 0.15);
+  --dropdown-bg:      #1E1E1E;
+  --dropdown-hover:   #252525;
+
+  --btn-outline-text:   #F0EDE8;
+  --btn-outline-border: #C8972B;
+  --btn-outline-hover:  #C8972B;
+
+  --progress-bg:      #2A2A2A;
+
+  --badge-tourist-bg:     #0D2B22;
+  --badge-tourist-text:   #4CAF88;
+  --badge-investor-bg:    #2A1F00;
+  --badge-investor-text:  #D4A017;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-gold-hover);
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 3px; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+.saqr-navbar {
+  background-color: var(--bg-navbar) !important;
+  border-bottom: 1px solid var(--navbar-border);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease;
+  padding: 0.75rem 0;
+}
+
+.saqr-brand {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.saqr-brand img {
+  filter: drop-shadow(0 0 4px rgba(200, 151, 43, 0.4));
+}
