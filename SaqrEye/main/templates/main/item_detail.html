@@ -1,0 +1,334 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if lang == 'ar' %}{{ item.name_ar }}{% else %}{{ item.name_en }}{% endif %} | SaqrEye
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+{% if persona == 'tourist' %}
+  {% static 'images/places/' as item_img_url %}
+  <section class="saqr-hero" style="background-image: url('{{ item_img_url }}{{ item.image|slice:'7:' }}');">
+{% else %}
+  {% static 'images/cities/' as item_img_url %}
+  <section class="saqr-hero" style="background-image: url('{{ item_img_url }}{{ city.image|slice:'7:' }}');">
+{% endif %}
+
+  <div class="saqr-hero-overlay"></div>
+
+  <div class="container saqr-hero-content">
+    <div class="col-12 col-lg-8">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb saqr-breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'home_view' %}">{% if lang == 'ar' %}الرئيسية{% else %}Home{% endif %}</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'city_detail_view' city.slug %}">
+              {% if lang == 'ar' %}{{ city.name_ar }}{% else %}{{ city.name_en }}{% endif %}
+            </a>
+          </li>
+          <li class="breadcrumb-item active">
+            {% if lang == 'ar' %}{{ item.name_ar }}{% else %}{{ item.name_en }}{% endif %}
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Badge -->
+      {% if persona == 'tourist' %}
+      <span class="saqr-badge saqr-badge-tourist mb-3">
+        {% if lang == 'ar' %}{{ item.type_ar }}{% else %}{{ item.type_en }}{% endif %}
+      </span>
+      {% else %}
+      <span class="saqr-badge saqr-badge-investor mb-3">
+        {% if lang == 'ar' %}💼 مشروع استثماري{% else %}💼 Investment Project{% endif %}
+      </span>
+      {% endif %}
+
+      <!-- Name -->
+      <h1 class="saqr-hero-title">
+        {% if lang == 'ar' %}{{ item.name_ar }}{% else %}{{ item.name_en }}{% endif %}
+      </h1>
+
+      <div class="saqr-gold-line"></div>
+
+      <!-- Sub info -->
+      {% if persona == 'tourist' %}
+      <p class="saqr-hero-subtitle mt-3">
+        <i class="bi bi-calendar3 me-2"></i>
+        {% if lang == 'ar' %}{{ item.recommend_months_ar }}{% else %}{{ item.recommend_months_en }}{% endif %}
+      </p>
+      {% else %}
+      <p class="saqr-hero-subtitle mt-3">
+        <i class="bi bi-building me-2"></i>
+        {% if lang == 'ar' %}{{ item.company_ar }}{% else %}{{ item.company_en }}{% endif %}
+      </p>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END HERO -->
+
+
+<!-- ═══════════════════════════════════════════════════════ DETAIL -->
+<section class="py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- ─── LEFT COLUMN ─── -->
+      <div class="col-12 col-lg-8">
+
+        <!-- ── TOURIST: Place Image ── -->
+        {% if persona == 'tourist' %}
+        <div class="saqr-detail-img-wrap mb-4">
+          <img
+            src="{% static 'images/places/' %}{{ item.image|slice:'7:' }}"
+            alt="{% if lang == 'ar' %}{{ item.name_ar }}{% else %}{{ item.name_en }}{% endif %}"
+            onerror="this.src='https://placehold.co/800x450/1a1a1a/C8972B?text=Place'"
+          >
+        </div>
+        {% endif %}
+
+        <!-- Description Card -->
+        <div class="saqr-detail-card mb-4">
+          <h2 class="saqr-detail-section-title">
+            <i class="bi bi-info-circle me-2 text-gold"></i>
+            {% if lang == 'ar' %}عن المكان{% else %}About{% endif %}
+          </h2>
+          <p class="saqr-detail-text">
+            {% if lang == 'ar' %}{{ item.desc_ar }}{% else %}{{ item.desc_en }}{% endif %}
+          </p>
+        </div>
+
+        <!-- ── INVESTOR: Progress & Company ── -->
+         {% if persona == 'investor' %}
+        <div class="saqr-detail-card mb-4">
+          <h2 class="saqr-detail-section-title">
+            <i class="bi bi-graph-up me-2 text-gold"></i>
+            {% if lang == 'ar' %}نسبة الاكتمال{% else %}Completion Progress{% endif %}
+          </h2>
+
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span style="font-size:0.9rem; color:var(--text-secondary);">
+              {% if lang == 'ar' %}التقدم الحالي{% else %}Current Progress{% endif %}
+            </span>
+            <span class="text-gold fw-bold fs-5">{{ item.completion }}%</span>
+          </div>
+
+          <div class="saqr-progress" style="height:12px;">
+            <div class="saqr-progress-bar" style="width:{{ item.completion }}%;"></div>
+          </div>
+
+          <div class="d-flex justify-content-between mt-2">
+            <span style="font-size:0.78rem; color:var(--text-muted);">0%</span>
+            <span style="font-size:0.78rem; color:var(--text-muted);">100%</span>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+
+      <!-- ─── RIGHT COLUMN (Info Card) ─── -->
+      <div class="col-12 col-lg-4">
+        <div class="saqr-info-card">
+
+          <h3 class="saqr-info-card-title">
+            {% if lang == 'ar' %}معلومات {% else %}Quick Info{% endif %}
+          </h3>
+          <hr class="saqr-divider mt-2 mb-3">
+
+          {% if persona == 'tourist' %}
+
+          <!-- City -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-geo-alt"></i>
+              {% if lang == 'ar' %}المدينة{% else %}City{% endif %}
+            </span>
+            <span class="saqr-info-value">
+              {% if lang == 'ar' %}{{ city.name_ar }}{% else %}{{ city.name_en }}{% endif %}
+            </span>
+          </div>
+
+          <!-- Type -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-tag"></i>
+              {% if lang == 'ar' %}النوع{% else %}Type{% endif %}
+            </span>
+            <span class="saqr-info-value">
+              {% if lang == 'ar' %}{{ item.type_ar }}{% else %}{{ item.type_en }}{% endif %}
+            </span>
+          </div>
+
+          <!-- Best Time -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-calendar3"></i>
+              {% if lang == 'ar' %}أفضل وقت{% else %}Best Time{% endif %}
+            </span>
+            <span class="saqr-info-value">
+              {% if lang == 'ar' %}{{ item.recommend_months_ar }}{% else %}{{ item.recommend_months_en }}{% endif %}
+            </span>
+          </div>
+
+          {% else %}
+
+          <!-- Company -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-building"></i>
+              {% if lang == 'ar' %}الشركة{% else %}Company{% endif %}
+            </span>
+            <span class="saqr-info-value">
+              {% if lang == 'ar' %}{{ item.company_ar }}{% else %}{{ item.company_en }}{% endif %}
+            </span>
+          </div>
+
+          <!-- Location -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-geo-alt"></i>
+              {% if lang == 'ar' %}الموقع{% else %}Location{% endif %}
+            </span>
+            <span class="saqr-info-value">
+              {% if lang == 'ar' %}{{ item.location_ar }}{% else %}{{ item.location_en }}{% endif %}
+            </span>
+          </div>
+
+          <!-- Completion -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-bar-chart"></i>
+              {% if lang == 'ar' %}الاكتمال{% else %}Completion{% endif %}
+            </span>
+            <span class="saqr-info-value text-gold fw-bold">{{ item.completion }}%</span>
+          </div>
+          <!-- Expected Date -->
+          <div class="saqr-info-row">
+            <span class="saqr-info-label">
+              <i class="bi bi-calendar-check"></i>
+              {% if lang == 'ar' %}التاريخ المتوقع{% else %}Expected Date{% endif %}
+            </span>
+            <span class="saqr-info-value">{{ item.expected_date_ar }}</span>
+          </div>
+
+          {% endif %}
+
+          <!-- Back Button -->
+          <a href="{% url 'city_detail_view' city.slug %}" class="btn saqr-btn-gold w-100 mt-4">
+            <i class="bi bi-arrow-right me-2"></i>
+            {% if lang == 'ar' %}العودة لـ {{ city.name_ar }}{% else %}Back to {{ city.name_en }}{% endif %}
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END DETAIL -->
+
+{% endblock %}
+
+
+{% block extra_css %}
+<style>
+  /* ── Breadcrumb ── */
+  .saqr-breadcrumb { background: transparent; padding: 0; }
+  .saqr-breadcrumb .breadcrumb-item a { color: rgba(255,255,255,0.75); font-size:0.85rem; }
+  .saqr-breadcrumb .breadcrumb-item a:hover { color: var(--accent-gold); }
+  .saqr-breadcrumb .breadcrumb-item.active { color: rgba(255,255,255,0.95); font-size:0.85rem; }
+  .saqr-breadcrumb .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.5); }
+
+  /* ── Detail Image ── */
+  .saqr-detail-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .saqr-detail-img-wrap img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  /* ── Detail Card ── */
+  .saqr-detail-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .saqr-detail-section-title {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .saqr-detail-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+
+  /* ── Info Card ── */
+  .saqr-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 80px;
+  }
+
+  .saqr-info-card-title {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+  }
+
+  .saqr-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .saqr-info-row:last-of-type { border-bottom: none; }
+
+  .saqr-info-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .saqr-info-value {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    text-align: end;
+  }
+
+  @media (max-width: 992px) {
+    .saqr-info-card { position: static; }
+    .saqr-detail-img-wrap img { height: 260px; }
+  }
+</style>
+{% endblock %}
