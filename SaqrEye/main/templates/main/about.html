@@ -1,0 +1,466 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if lang == 'ar' %}عين الصقر — عن الموقع{% else %}SaqrEye — About{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<section class="saqr-about-hero">
+  <div class="saqr-hero-overlay"></div>
+  <div class="container saqr-hero-content">
+    <div class="col-12 col-lg-7">
+      <span class="saqr-badge saqr-badge-gold mb-3">
+        {% if lang == 'ar' %}🦅 عين الصقر{% else %}🦅 SaqrEye{% endif %}
+      </span>
+      <h1 class="saqr-hero-title">
+        {% if lang == 'ar' %}عن الموقع{% else %}About Us{% endif %}
+      </h1>
+      <div class="saqr-gold-line"></div>
+      <p class="saqr-hero-subtitle mt-3">
+        {% if lang == 'ar' %}
+          بوابتك الذكية لاستكشاف المملكة العربية السعودية — للسائح والمستثمر
+        {% else %}
+          Your smart gateway to explore Saudi Arabia — for tourists and investors
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END HERO -->
+
+
+<!-- ═══════════════════════════════════════════════════════ ABOUT -->
+<section class="py-5">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+
+      <!-- Logo Side -->
+      <div class="col-12 col-lg-4 text-center">
+        <div class="saqr-about-logo-wrap">
+          <img src="{% static 'favicon/android-chrome-512x512.png' %}" alt="SaqrEye Logo">
+        </div>
+        <h2 class="saqr-about-brand mt-4">
+          {% if lang == 'ar' %}عين الصقر{% else %}SaqrEye{% endif %}
+        </h2>
+        <p class="saqr-about-brand-sub mt-1">
+          {% if lang == 'ar' %}رؤية 2030 🇸🇦{% else %}Vision 2030 🇸🇦{% endif %}
+        </p>
+      </div>
+
+      <!-- Text Side -->
+      <div class="col-12 col-lg-8">
+        <h3 class="saqr-section-title mb-3">
+          {% if lang == 'ar' %}ما هو <span>عين الصقر</span>؟{% else %}What is <span>SaqrEye</span>?{% endif %}
+        </h3>
+        <div class="saqr-gold-line mb-4"></div>
+
+        <p class="saqr-about-text">
+          {% if lang == 'ar' %}
+            عين الصقر هو موقع إلكتروني متخصص يهدف إلى تقديم تجربة استكشافية مخصصة للمملكة العربية السعودية. سواء كنت سائحاً يبحث عن أجمل الوجهات السياحية، أو مستثمراً يتطلع إلى أبرز فرص الاستثمار في إطار رؤية 2030، فإن عين الصقر يوفر لك المعلومات التي تحتاجها بطريقة سهلة ومنظمة.
+          {% else %}
+            SaqrEye is a specialized website aimed at providing a personalized exploration experience for Saudi Arabia. Whether you're a tourist looking for the most beautiful destinations, or an investor seeking the top opportunities within Vision 2030, SaqrEye provides you with the information you need in an easy and organized way.
+          {% endif %}
+        </p>
+
+        <p class="saqr-about-text mt-3">
+          {% if lang == 'ar' %}
+            يعتمد الموقع على نظام الشخصيات الذكي الذي يُخصص تجربتك بناءً على اختيارك — سائح أو مستثمر — ويعرض لك المدن والوجهات الأكثر ملاءمة لاهتماماتك واحتياجاتك.
+          {% else %}
+            The website relies on a smart persona system that personalizes your experience based on your choice — tourist or investor — and displays the cities and destinations most relevant to your interests and needs.
+          {% endif %}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END ABOUT -->
+
+
+<!-- ═══════════════════════════════════════════════════════ FEATURES -->
+<section class="py-5 saqr-features-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="saqr-section-title">
+        {% if lang == 'ar' %}مميزات <span>الموقع</span>{% else %}Platform <span>Features</span>{% endif %}
+      </h2>
+      <div class="saqr-gold-line mx-auto mt-3"></div>
+    </div>
+
+    <div class="row gy-4">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🎭</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}نظام الشخصيات{% else %}Persona System{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              تجربة مخصصة لكل مستخدم بناءً على اهتماماته
+            {% else %}
+              Personalized experience for each user based on their interests
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🌍</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}ثنائي اللغة{% else %}Bilingual{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              دعم كامل للغتين العربية والإنجليزية
+            {% else %}
+              Full support for both Arabic and English languages
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🌙</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}الوضع الليلي{% else %}Dark Mode{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              دعم الوضع الليلي والنهاري لراحة العينين
+            {% else %}
+              Dark and light mode support for eye comfort
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">📱</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}متجاوب{% else %}Responsive{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              تصميم متجاوب يعمل على جميع الأجهزة
+            {% else %}
+              Responsive design that works on all devices
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END FEATURES -->
+
+
+<!-- ═══════════════════════════════════════════════════════ VISION -->
+<!-- <section class="py-5">
+  <div class="container">
+    
+    
+    <div class="saqr-vision-section">
+      <div class="row align-items-center gy-4">
+
+        <div class="col-12 col-lg-7">
+          <span class="saqr-badge saqr-badge-gold mb-3">🇸🇦 Vision 2030</span>
+          <h2 class="saqr-section-title mt-2">
+            {% if lang == 'ar' %}رؤية المملكة <span>2030</span>{% else %}Saudi Arabia's <span>Vision 2030</span>{% endif %}
+          </h2>
+        
+
+        <div class="col-12 col-lg-5">
+          <div class="row gy-3">
+            <div class="col-6">
+              <div class="saqr-vision-stat">
+                <span class="saqr-stat-number">2030</span>
+                <span class="saqr-stat-label">{% if lang == 'ar' %}هدف الرؤية{% else %}Vision Target{% endif %}</span>
+                <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🎭</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}نظام الشخصيات{% else %}Persona System{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              تجربة مخصصة لكل مستخدم بناءً على اهتماماته
+            {% else %}
+              Personalized experience for each user based on their interests
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🌍</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}ثنائي اللغة{% else %}Bilingual{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              دعم كامل للغتين العربية والإنجليزية
+            {% else %}
+              Full support for both Arabic and English languages
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">🌙</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}الوضع الليلي{% else %}Dark Mode{% endif %}
+          </h4>
+        
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="saqr-feature-card">
+          <div class="saqr-feature-icon">📱</div>
+          <h4 class="saqr-feature-title">
+            {% if lang == 'ar' %}متجاوب{% else %}Responsive{% endif %}
+          </h4>
+          <p class="saqr-feature-text">
+            {% if lang == 'ar' %}
+              تصميم متجاوب يعمل على جميع الأجهزة
+            {% else %}
+              Responsive design that works on all devices
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+<!-- ═══════════════════════════════════════════════════════ END FEATURES -->
+
+
+<!-- ═══════════════════════════════════════════════════════ VISION -->
+<section class="py-5">
+  <div class="container">
+    <div class="saqr-vision-section">
+      <div class="row align-items-center gy-4">
+
+        <div class="col-12 col-lg-7">
+          <span class="saqr-badge saqr-badge-gold mb-3">🇸🇦 Vision 2030</span>
+          <h2 class="saqr-section-title mt-2">
+            {% if lang == 'ar' %}رؤية المملكة <span>2030</span>{% else %}Saudi Arabia's <span>Vision 2030</span>{% endif %}
+          </h2>
+          <div class="saqr-gold-line mt-2 mb-4"></div>
+          <p class="saqr-about-text">
+            {% if lang == 'ar' %}
+              رؤية 2030 هي مبادرة استراتيجية طموحة أطلقها صاحب السمو الملكي الأمير محمد بن سلمان عام 2016، تهدف إلى تنويع الاقتصاد السعودي وتقليل الاعتماد على النفط، وتطوير قطاعات السياحة والترفيه والثقافة والاستثمار.
+            {% else %}
+              Vision 2030 is an ambitious strategic initiative launched by His Royal Highness Prince Mohammed bin Salman in 2016, aiming to diversify the Saudi economy, reduce dependence on oil, and develop the tourism, entertainment, culture, and investment sectors.
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="row gy-3">
+            <div class="col-6">
+              <div class="saqr-vision-stat">
+                <span class="saqr-stat-number">2030</span>
+                <span class="saqr-stat-label">{% if lang == 'ar' %}هدف الرؤية{% else %}Vision Target{% endif %}</span>
+                </div>
+            </div>
+            <div class="col-6">
+              <div class="saqr-vision-stat">
+                <span class="saqr-stat-number">$1T+</span>
+                <span class="saqr-stat-label">{% if lang == 'ar' %}حجم الاستثمار{% else %}Investment{% endif %}</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="saqr-vision-stat">
+                <span class="saqr-stat-number">100M</span>
+                <span class="saqr-stat-label">{% if lang == 'ar' %}زائر سنوياً{% else %}Visitors/Year{% endif %}</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="saqr-vision-stat">
+                <span class="saqr-stat-number">50%</span>
+                <span class="saqr-stat-label">{% if lang == 'ar' %}تنويع الناتج{% else %}GDP Diversity{% endif %}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END VISION -->
+
+
+<!-- ═══════════════════════════════════════════════════════ CTA -->
+<section class="py-5 saqr-cta-section">
+  <div class="container text-center">
+    <h2 class="saqr-section-title mb-3">
+      {% if lang == 'ar' %}جاهز للاستكشاف؟{% else %}Ready to Explore?{% endif %}
+    </h2>
+    <p class="saqr-section-subtitle mx-auto mb-4">
+      {% if lang == 'ar' %}
+        اختر شخصيتك وابدأ رحلتك في اكتشاف المملكة
+      {% else %}
+        Choose your persona and start your journey discovering Saudi Arabia
+      {% endif %}
+    </p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="{% url 'home_view' %}" class="btn saqr-btn-gold saqr-btn-lg">
+        {% if lang == 'ar' %}العودة للرئيسية{% else %}Go to Home{% endif %}
+      </a>
+      <!-- <a href="{% url 'change_persona_view' %}" class="btn saqr-btn-outline saqr-btn-lg">
+        {% if lang == 'ar' %}تغيير الشخصية{% else %}Change Role{% endif %}
+      </a> -->
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════════ END CTA -->
+
+{% endblock %}
+
+
+{% block extra_css %}
+<style>
+  /* ── About Hero ── */
+  .saqr-about-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #0F0F0F 0%, #1A1410 50%, #0F0F0F 100%);
+    overflow: hidden;
+  }
+
+  .saqr-about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200,151,43,0.12) 0%, transparent 60%);
+  }
+
+  /* ── Logo ── */
+  .saqr-about-logo-wrap {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    padding: 1rem;
+    background: var(--accent-gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(200,151,43,0.2);
+  }
+
+  .saqr-about-logo-wrap img {
+    width: 170%;
+    height: 170%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(200,151,43,0.4));
+  }
+
+  .saqr-about-brand {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .saqr-about-brand-sub {
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ── About Text ── */
+  .saqr-about-text {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.95;
+  }
+
+  /* ── Features ── */
+  .saqr-features-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .saqr-feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .saqr-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-gold);
+  }
+
+  .saqr-feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .saqr-feature-title {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .saqr-feature-text {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Vision Stats ── */
+  .saqr-vision-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .saqr-vision-stat {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  /* ── CTA ── */
+  .saqr-cta-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+  }
+</style>
+{% endblock %}

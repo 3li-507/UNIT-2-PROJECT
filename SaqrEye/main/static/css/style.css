@@ -96,6 +96,9 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 main {
   flex: 1;
@@ -139,6 +142,8 @@ a:hover {
 
 .saqr-brand img {
   filter: drop-shadow(0 0 4px rgba(200, 151, 43, 0.4));
+  height: 150px;
+  width: 150px;
 }
 
 .saqr-navbar .nav-link {
