@@ -46,7 +46,7 @@
           {% if lang == 'ar' %}عين الصقر{% else %}SaqrEye{% endif %}
         </h2>
         <p class="saqr-about-brand-sub mt-1">
-          {% if lang == 'ar' %}رؤية 2030 🇸🇦{% else %}Vision 2030 🇸🇦{% endif %}
+          {% if lang == 'ar' %}رؤية 2030 {% else %}Vision 2030 🇸🇦{% endif %}
         </p>
       </div>
 
@@ -95,7 +95,7 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
         <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🎭</div>
+          <div class="saqr-feature-icon"></div>
           <h4 class="saqr-feature-title">
             {% if lang == 'ar' %}نظام الشخصيات{% else %}Persona System{% endif %}
           </h4>
@@ -111,7 +111,7 @@
 
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🌍</div>
+          <div class="saqr-feature-icon"></div>
           <h4 class="saqr-feature-title">
             {% if lang == 'ar' %}ثنائي اللغة{% else %}Bilingual{% endif %}
           </h4>
@@ -127,7 +127,7 @@
 
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🌙</div>
+          <div class="saqr-feature-icon"></div>
           <h4 class="saqr-feature-title">
             {% if lang == 'ar' %}الوضع الليلي{% else %}Dark Mode{% endif %}
           </h4>
@@ -143,7 +143,7 @@
 
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">📱</div>
+          <div class="saqr-feature-icon"></div>
           <h4 class="saqr-feature-title">
             {% if lang == 'ar' %}متجاوب{% else %}Responsive{% endif %}
           </h4>
@@ -162,90 +162,6 @@
 </section>
 <!-- ═══════════════════════════════════════════════════════ END FEATURES -->
 
-
-<!-- ═══════════════════════════════════════════════════════ VISION -->
-<!-- <section class="py-5">
-  <div class="container">
-    
-    
-    <div class="saqr-vision-section">
-      <div class="row align-items-center gy-4">
-
-        <div class="col-12 col-lg-7">
-          <span class="saqr-badge saqr-badge-gold mb-3">🇸🇦 Vision 2030</span>
-          <h2 class="saqr-section-title mt-2">
-            {% if lang == 'ar' %}رؤية المملكة <span>2030</span>{% else %}Saudi Arabia's <span>Vision 2030</span>{% endif %}
-          </h2>
-        
-
-        <div class="col-12 col-lg-5">
-          <div class="row gy-3">
-            <div class="col-6">
-              <div class="saqr-vision-stat">
-                <span class="saqr-stat-number">2030</span>
-                <span class="saqr-stat-label">{% if lang == 'ar' %}هدف الرؤية{% else %}Vision Target{% endif %}</span>
-                <div class="col-12 col-sm-6 col-lg-3">
-        <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🎭</div>
-          <h4 class="saqr-feature-title">
-            {% if lang == 'ar' %}نظام الشخصيات{% else %}Persona System{% endif %}
-          </h4>
-          <p class="saqr-feature-text">
-            {% if lang == 'ar' %}
-              تجربة مخصصة لكل مستخدم بناءً على اهتماماته
-            {% else %}
-              Personalized experience for each user based on their interests
-            {% endif %}
-          </p>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🌍</div>
-          <h4 class="saqr-feature-title">
-            {% if lang == 'ar' %}ثنائي اللغة{% else %}Bilingual{% endif %}
-          </h4>
-          <p class="saqr-feature-text">
-            {% if lang == 'ar' %}
-              دعم كامل للغتين العربية والإنجليزية
-            {% else %}
-              Full support for both Arabic and English languages
-            {% endif %}
-          </p>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">🌙</div>
-          <h4 class="saqr-feature-title">
-            {% if lang == 'ar' %}الوضع الليلي{% else %}Dark Mode{% endif %}
-          </h4>
-        
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="saqr-feature-card">
-          <div class="saqr-feature-icon">📱</div>
-          <h4 class="saqr-feature-title">
-            {% if lang == 'ar' %}متجاوب{% else %}Responsive{% endif %}
-          </h4>
-          <p class="saqr-feature-text">
-            {% if lang == 'ar' %}
-              تصميم متجاوب يعمل على جميع الأجهزة
-            {% else %}
-              Responsive design that works on all devices
-            {% endif %}
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-<!-- ═══════════════════════════════════════════════════════ END FEATURES -->
 
 
 <!-- ═══════════════════════════════════════════════════════ VISION -->
@@ -420,6 +336,7 @@
   .saqr-feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    justify-content: center;
   }
 
   .saqr-feature-title {
